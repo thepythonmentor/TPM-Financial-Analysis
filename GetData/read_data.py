@@ -1,5 +1,4 @@
 import datetime
-import pandas
 import quandl
 
 
@@ -9,9 +8,7 @@ end = datetime.date.today()
 
 # Let's get Apple stock data; Apple's ticker symbol is AAPL
 # First argument is the series we want, second is the source ("yahoo" for Yahoo! Finance), third is the start date, fourth is the end date
-s = "AAPL"
-apple = quandl.get("WIKI/" + s, start_date=start, end_date=end)
 
-type(apple)
-print(type(apple))
-print(apple)
+def get_stock_data(name = 'AAPL', start = datetime.datetime(2017, 1, 1), end=datetime.date.today()):
+    stock = quandl.get("WIKI/" + name, start_date=start, end_date=end)
+    return stock
